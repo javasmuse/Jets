@@ -14,7 +14,3 @@
 • Push early and often, so your team knows what you've got, they can't help if they don't know
 • If your blueprint (i.e. class) is for an outhouse, don't expect a mansion - don't micromanage class creation, use the shortcuts, as eclipse knows what it needs
 • Learned the importance of instantiating new copies to overcome the limitations of static methods, and placeing ArrayLists and Scanners in the proper place for 'global' access
-Jets Project
-
-Summary
-  Here is an airfield of some jets/planes I like.
