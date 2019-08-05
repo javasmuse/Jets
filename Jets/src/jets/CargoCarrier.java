@@ -7,7 +7,7 @@ public class CargoCarrier implements LoadCargo {
 
 	@Override
 	public void loadCargo() {
-		System.out.println("Loading all Cargo Carriers please wait..... remember jet fuel weighs 6 pounds per gallon.");
+		System.out.println("\nLoading all Cargo Carriers please wait..... \nremember jet fuel weighs 6 pounds per gallon & check for stowaways.\n");
 
 	}
 

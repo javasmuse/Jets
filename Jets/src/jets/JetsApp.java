@@ -30,9 +30,10 @@ public class JetsApp {
 		System.out.println("(4) View Jet with the longest Range");
 		System.out.println("(5) Load all Cargo Jets");
 		System.out.println("(6) Dogfight");
-		System.out.println("(7) add a jet to our Fleet");
-		System.out.println("(8) remove a jet from our Fleet");
-		System.out.println("(9) Quit / leave the airfield\n");
+		System.out.println("(7) SAR - Search and Rescue");
+		System.out.println("(8) add a jet to our Fleet");
+		System.out.println("(9) remove a jet from our Fleet");
+		System.out.println("(0) Quit / leave the airfield\n");
 		choice = kb.nextInt();
 		choice(choice);
 		return choice;
@@ -72,18 +73,22 @@ public class JetsApp {
 			menu();
 			break;
 		case 7:
+			airfield.mayDay();
+			System.out.println();
+			menu();
+		case 8:
 			airfield.addJet();
 			airfield.showInventory();
 			System.out.println();
 			menu();
 			break;
-		case 8:
+		case 9:
 			airfield.removeJet();
 			airfield.showInventory();
 			System.out.println();
 			menu();
 			break;
-		case 9:
+		case 0:
 			System.out.println("Goodbye, Welcome back anytime.");
 			break;
 		}
