@@ -1,7 +1,7 @@
-Cargo,CG Transporter,374.00,5000,20000
+SAR,CG Hercules C-130,374.00,5000,20000
 Fighter,CG Falcon,410.00,2045,50000
 Fighter,Navy Hellcat F4F,320.00,830,5000
-Cargo,Navy Catalina PBY-5A,125.00,2520,8000
+SAR,Navy Catalina PBY-5A,125.00,2520,8000
 Cargo,Otter De Haviland,121.00,945,20000
 Cargo,Vanilla Air,230.00,3225,30000
 Cargo,ABQ Fiesta Rider,30.00,6000,20000
