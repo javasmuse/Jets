@@ -10,7 +10,7 @@ public class Fighter extends Jet implements DogFight {
 
 	@Override
 	public void dogFight() {
-		System.out.println("Combat Ready... send us in coach! ");
+		System.out.println("\nCombat Ready... send us in coach! \n");
 
 	}
 

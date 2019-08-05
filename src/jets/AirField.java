@@ -13,6 +13,7 @@ public class AirField {
 	private List<Jet> jetList = new ArrayList<Jet>();
 	CargoCarrier ccJet = new CargoCarrier();
 	Fighter fJet = new Fighter();
+	SAR sJet = new SAR();
 	Scanner kb = new Scanner(System.in);
 
 	public AirField() {
@@ -39,11 +40,7 @@ public class AirField {
 				Jet currentJet = new JetImp(type, model, speed, range, price);
 				jetList.add(currentJet);
 			}
-			
-			
-//			if (plane[0] .contentEquals("Spy")) {
-//			SpyJet sJ = new SpyJet(type, tailNumber, model, maxSpeed, maxRange, OptimalSpeed, price); 
-//			jetList.add(sJ); 
+
 			reader.close();
 		} catch (NumberFormatException e) {
 			e.printStackTrace();
@@ -68,14 +65,14 @@ public class AirField {
 		System.out.println("All Jets Fly Now");
 		for (Jet jet : jetList) {
 			System.out.println("Gonna Fly Now..." + jet.getModel() + " can fly for "
-					+ (int) (jet.getRange() / jet.getSpeed()) + " hours on one tank of fuel.\n");
+					+ (double) (jet.getRange() / jet.getSpeed()) + " hours on one tank of fuel.\n");
 
 		}
 	}
 
 	public void fastestJet() {
 		double fJet = 0.0;
-		String nameJet = null; 
+		String nameJet = null;
 		for (Jet jet : jetList) {
 			if (jet.getSpeed() > fJet) {
 				fJet = jet.getSpeed();
@@ -87,7 +84,7 @@ public class AirField {
 
 	public void longestRange() {
 		int lrJet = 0;
-		String nameJet = null; 
+		String nameJet = null;
 		for (Jet jet : jetList) {
 			if (jet.getRange() > lrJet) {
 				lrJet = jet.getRange();
@@ -98,29 +95,40 @@ public class AirField {
 	}
 
 	public void loadCargo() {
-		for (Jet jet : jetList) {
+		System.out.println("\n\nAll Cargo Carriers standing by to be loaded.\n");
+		for (Jet jet : jetList)  {
 			String type = jet.getType();
 			if (type.equalsIgnoreCase("Cargo")) {
-			 	System.out.println(jet.getModel() );
-			 	}
+				System.out.println(jet.getModel());
+			}
 		}
-		System.out.println("All Cargo Carriers standing by to be loaded.");
 		ccJet.loadCargo();
 	}
 
 	public void dogFight() {
+		System.out.println("\n\nAll fighters \n");
 		for (Jet jet : jetList) {
 			String type = jet.getType();
 			if (type.equalsIgnoreCase("fighter")) {
-				System.out.println(jet.getModel() );
+				System.out.println(jet.getModel());
 			}
 		}
-		System.out.print("All fighters ");
 		fJet.dogFight();
+	}
+	
+	public void mayDay() {
+		System.out.println("\n\nAttention all SAR Jets \n");
+		for (Jet jet : jetList) {
+			String type = jet.getType();
+			if (type.equalsIgnoreCase("SAR")) {
+				System.out.println(jet.getModel());
+			}
+			}
+		sJet.mayday();
 	}
 
 	public List<Jet> addJet() {
-		System.out.print("Would you like to add a Cargo Carrier or Fighter jet?  ");
+		System.out.print("Would you like to add a Cargo Carrier, Fighter jet, or SAR?  \n(enter 'Cargo', 'Fighter', or 'SAR' - exactly please if you want them to join their similar types.)");
 		String type = kb.next();
 		System.out.println("\nEnter the Model: ");
 		String model = kb.next();
@@ -135,20 +143,20 @@ public class AirField {
 		System.out.println();
 		System.out.println("Breaking news... We have an updated inventory.  ");
 		System.out.println();
-		return jetList; 
+		return jetList;
 	}
-	
+
 	public List<Jet> removeJet() {
 		System.out.println("Please choose a jet to remove. Review the inventory and enter the number.");
-		System.out.println("Please do not remove all jets. You can only fly one at a time.");
+		System.out.println("You can only fly one at a time. But, you may return to checkout another.");
 		for (int index = 0; index < jetList.size(); index++) {
 			System.out.println((index + 1) + " " + jetList.get(index).getModel());
 		}
 		int choice = kb.nextInt();
 		jetList.remove(choice - 1);
-		System.out.println(jetList);
+		System.out.println();
 		System.out.println("Our Inventory has changed, one is off flying. ");
-		return jetList; 
+		System.out.println();
+		return jetList;
 	}
 }
-
